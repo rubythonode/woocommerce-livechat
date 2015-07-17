@@ -1,0 +1,273 @@
+#woocommerce-livechat-container {
+    padding-top: 20px;
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #ffffff;
+    left: -20px;
+}
+#woocommerce-livechat-container a:focus{
+    color: inherit;
+    -webkit-box-shadow: none; 
+    box-shadow: none; 
+}
+#woocommerce-livechat-container input.textField {
+    width: 100%;
+    font-size: 17px;
+    height: 46px;
+    padding: 6px 10px;
+    font-family: Lato, sans-serif;
+    outline: 0;
+    border-radius: 2px;
+    border: 1px solid #cecece
+}
+#woocommerce-livechat-container input.textField:focus {
+    border: 1px solid rgba(27, 141, 241, 1)
+}
+#woocommerce-livechat-container form {
+    width: 360px;
+    margin: 0 auto;
+    text-align: center
+}
+#woocommerce-livechat-container form div{
+    margin: 10px 0px;
+}
+#woocommerce-livechat-container form label {
+    width: 108px;
+    text-align: left;
+    display: inline-block;
+}
+#woocommerce-livechat-container form input.textField {
+    width: 250px;
+}
+#woocommerce-livechat-container .intro {
+    text-align: center;
+    line-height: 1.5!important;
+    font-size: 17px;
+    font-weight: 500
+}
+#woocommerce-livechat-container h1 {
+    margin: 30px auto 40px;
+    font-size: 55px;
+    font-weight: 300;
+    color: #3d3d3d;
+    text-align: center
+}
+#woocommerce-livechat-container h2 {
+    margin: 30px auto 40px;
+    font-size: 32px;
+    font-weight: 300;
+    color: #3d3d3d;
+    text-align: center
+}
+#woocommerce-livechat-container .login-box-header {
+    position: relative;
+    width: 100%;
+    margin: 0 auto 30px auto;
+    width: 300px;
+}
+#woocommerce-livechat-container .logo {
+    display: inline-block;
+    width: 120px;
+    height: 66px;
+    background-image: url(http://cdn.livechatinc.com/integrations/img/woocommerce/logo@2x.png);
+    background-size: 120px 66px;
+    float: right
+}
+#woocommerce-livechat-container .logo-woo {
+    display: inline-block;
+    width: 112px;
+    height: 66px;
+    background-image: url(http://cdn.livechatinc.com/integrations/img/woocommerce/woo-logo@2.png);
+    background-size: 112px 66px;
+}
+#woocommerce-livechat-container .lc-submit button {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    border: 0;
+    padding: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #fff;
+    text-shadow: 1px 1px 0 #268;
+    background: #2d6dc2;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #367bd6), color-stop(1, #367bd6));
+    background: -ms-linear-gradient(bottom, #367bd6, #367bd6);
+    background: -moz-linear-gradient(center bottom, #367bd6 0, #367bd6 100%);
+    background: -o-linear-gradient(#367bd6, #367bd6);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#367bd6', endColorstr='#367bd6', GradientType=0);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    font-family: Lato, sans-serif;
+    cursor: pointer;
+    height: auto;
+}
+#woocommerce-livechat-container .lc-submit button:focus,
+#woocommerce-livechat-container .lc-submit button:hover {
+    outline-color: #FFF;
+    background: #3879d1;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4b89da), color-stop(1, #4b89da));
+    background: -ms-linear-gradient(bottom, #4b89da, #4b89da);
+    background: -moz-linear-gradient(center bottom, #4b89da 0, #4b89da 100%);
+    background: -o-linear-gradient(#4b89da, #4b89da);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#4b89da', endColorstr='#4b89da', GradientType=0);
+}
+#woocommerce-livechat-container .lc-submit button span {
+    display: block;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 17px 32px 18px!important;
+    text-transform: uppercase;
+    border: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    text-shadow: none
+}
+
+#woocommerce-livechat-container .installation-desc {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center
+}
+#woocommerce-livechat-container .links {
+    text-align: center;
+    font-family: Lato, sans-serif;
+    color: #3d3d3d;
+    padding: 10px 25px;
+    line-height: 1.5em!important;
+}
+#woocommerce-livechat-container a {
+    color: #3d3d3d;
+    text-decoration: none;
+    outline: 0!important
+}
+#woocommerce-livechat-container a:hover {
+    color: #4d7cb3;
+    text-decoration: none
+}
+#woocommerce-livechat-container .a-important {
+    font-weight: 700;
+    text-decoration: underline
+}
+
+#woocommerce-livechat-container .lc-submit button.green {
+    background: #33b95c;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #33b95c), color-stop(1, #33b95c));
+    background: -ms-linear-gradient(bottom, #33b95c, #33b95c);
+    background: -moz-linear-gradient(center bottom, #33b95c 0, #33b95c 100%);
+    background: -o-linear-gradient(#33b95c, #33b95c);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#33b95c', endColorstr='#33b95c', GradientType=0);
+}
+#woocommerce-livechat-container .lc-submit button.green:focus,
+#woocommerce-livechat-container .lc-submit button.green:hover {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #3cc967), color-stop(1, #3cc967));
+    background: -ms-linear-gradient(bottom, #3cc967, #3cc967);
+    background: -moz-linear-gradient(center bottom, #3cc967 0, #3cc967 100%);
+    background: -o-linear-gradient(#3cc967, #3cc967);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#3cc967', endColorstr='#3cc967', GradientType=0);
+}
+#woocommerce-livechat-container input.error,
+#woocommerce-livechat-container input.error:focus {
+    border-color: #ed574a!important
+}
+#woocommerce-livechat-container .lc-submit button.green span {
+    border-top: 1px solid transparent
+}
+#woocommerce-livechat-container .multi-buttons {
+    text-align: center
+}
+#woocommerce-livechat-container .multi-buttons button {
+    max-width: 240px;
+    display: inline-block;
+    margin: 0 10px
+}
+#woocommerce-livechat-container span.error {
+    text-align: left;
+    display: block;
+    padding: 0 10px;
+    line-height: 22px!important;
+    margin: 10px 0 15px!important;
+    color: #82160A!important
+}
+#woocommerce-livechat-container .hidden {
+    display: none!important;
+}
+#woocommerce-livechat-container .help {
+    cursor: help;
+}
+#woocommerce-livechat-container #customDataGroup {
+    width: 66px;
+}
+#woocommerce-livechat-container #settings {
+    width: 280px;
+    margin: 20px auto 0px auto;
+}
+#woocommerce-livechat-container #settings .title{
+    width: 200px;
+    margin: 0px 10px 20px 0px;
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.onoffswitch {
+    position: relative; 
+    width: 66px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    display: inline-block;
+}
+.onoffswitch-checkbox {
+    display: none!important;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #2D6DC2; border-radius: 2px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 16px; padding: 0; line-height: 16px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #2D6DC2; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 16px; margin: 0px;
+    background: #33b95c;
+    border: 2px solid #2D6DC2; border-radius: 2px;
+    position: absolute; top: 0; bottom: 0; right: 46px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}

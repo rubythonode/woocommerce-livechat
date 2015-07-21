@@ -5,8 +5,6 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: #ffffff;
-    left: -20px;
 }
 #woocommerce-livechat-container a:focus{
     color: inherit;
@@ -205,69 +203,120 @@
 #woocommerce-livechat-container .hidden {
     display: none!important;
 }
-#woocommerce-livechat-container .help {
-    cursor: help;
-}
 #woocommerce-livechat-container #customDataGroup {
     width: 66px;
 }
-#woocommerce-livechat-container #settings {
+#woocommerce-livechat-container .settings {
     width: 280px;
     margin: 20px auto 0px auto;
 }
-#woocommerce-livechat-container #settings .title{
-    width: 200px;
+#woocommerce-livechat-container .settings .title{
+    width: 194px;
     margin: 0px 10px 20px 0px;
     display: inline-block;
     font-size: 24px;
     cursor: pointer;
 }
 
-.onoffswitch {
+#woocommerce-livechat-container .settings .title span{
+    vertical-align: middle;
+}
+
+#woocommerce-livechat-container .onoffswitch {
     position: relative; 
-    width: 66px;
+    width: 72px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
     display: inline-block;
+    height: 26px;
+    vertical-align: middle;
 }
-.onoffswitch-checkbox {
+#woocommerce-livechat-container .onoffswitch-checkbox {
     display: none!important;
 }
-.onoffswitch-label {
+#woocommerce-livechat-container .onoffswitch-label {
     display: block; overflow: hidden; cursor: pointer;
-    border: 2px solid #2D6DC2; border-radius: 2px;
+    border: 2px solid #bbb; 
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
-.onoffswitch-inner {
+#woocommerce-livechat-container .onoffswitch-inner {
     display: block; width: 200%; margin-left: -100%;
     -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
     -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
 }
-.onoffswitch-inner:before, .onoffswitch-inner:after {
-    display: block; float: left; width: 50%; height: 16px; padding: 0; line-height: 16px;
-    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+#woocommerce-livechat-container .onoffswitch-inner:before, #woocommerce-livechat-container .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 24px; padding: 0; line-height: 24px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif;
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: sans-serif;
+    font-weight: 100;
 }
-.onoffswitch-inner:before {
+#woocommerce-livechat-container .onoffswitch-inner:before {
     content: "ON";
-    padding-left: 10px;
-    background-color: #2D6DC2; color: #FFFFFF;
+    text-shadow: -1px -1px 0 #58b;
+    padding-left: 8px;
+    background: #6699cc;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #6699cc), color-stop(1, #88bbee));
+    background: -ms-linear-gradient(bottom, #6699cc, #88bbee);
+    background: -moz-linear-gradient(center bottom, #6699cc 0%, #88bbee 100%);
+    background: -o-linear-gradient(#88bbee, #6699cc);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#88bbee', endColorstr='#6699cc', GradientType=0);
+    -webkit-box-shadow: inset 0 0 5px #6699cc;
+    -moz-box-shadow: inset 0 0 5px #6699cc;
+    box-shadow: inset 0 0 5px #6699cc;
+    text-shadow: rgb(85, 136, 187) -1px -1px 0px;
 }
-.onoffswitch-inner:after {
+#woocommerce-livechat-container .onoffswitch-inner:after {
     content: "OFF";
-    padding-right: 10px;
-    background-color: #EEEEEE; color: #999999;
+    padding-right: 5px;
+    background: #dddddd;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #dddddd), color-stop(1, #ffffff));
+    background: -ms-linear-gradient(bottom, #dddddd, #ffffff);
+    background: -moz-linear-gradient(center bottom, #dddddd 0%, #ffffff 100%);
+    background: -o-linear-gradient(#ffffff, #dddddd);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dddddd', GradientType=0);
+    -webkit-box-shadow: inset 0 0 5px #dddddd;
+    -moz-box-shadow: inset 0 0 5px #dddddd;
+    box-shadow: inset 0 0 5px #dddddd;
+    color: rgb(153, 153, 153);
     text-align: right;
 }
-.onoffswitch-switch {
-    display: block; width: 16px; margin: 0px;
-    background: #33b95c;
-    border: 2px solid #2D6DC2; border-radius: 2px;
-    position: absolute; top: 0; bottom: 0; right: 46px;
+
+#woocommerce-livechat-container .onoffswitch-switch {
+    display: block; width: 33px; margin: 0px;
+    background: #cccccc;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #cccccc), color-stop(1, #f3f3f3));
+    background: -ms-linear-gradient(bottom, #cccccc, #f3f3f3);
+    background: -moz-linear-gradient(center bottom, #cccccc 0%, #f3f3f3 100%);
+    background: -o-linear-gradient(#f3f3f3, #cccccc);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f3f3f3', endColorstr='#cccccc', GradientType=0);
+    border: 1px solid #bbb;
+    border-top-color: rgb(187, 187, 187);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgb(187, 187, 187);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgb(187, 187, 187);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(187, 187, 187);
+    border-left-style: solid;
+    border-left-width: 1px;
+    position: absolute; top: 0; bottom: 0; right: 37px;
     -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
     -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+#woocommerce-livechat-container .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
     margin-left: 0;
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+#woocommerce-livechat-container .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
     right: 0px; 
 }

@@ -87,6 +87,8 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
                 $updated = $this->update_group( (int) $_POST['group'] );
             } else if ( array_key_exists( 'licenseId', $_POST ) ) {
                 $updated = $this->set_up_license_id( (int) $_POST['licenseId'] );
+            } else if ( array_key_exists( 'licenseEmail', $_POST ) ) {
+                $updated = $this->set_up_license_email( $_POST['licenseEmail'] );
             } else if ( array_key_exists( 'customDataSettings', $_POST ) ) {
                 $settings = explode( ':', $_POST['customDataSettings'] );
                 if ( 2 === count( $settings ) ) {
@@ -133,13 +135,17 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
             if ( null !== $this->force_template ) {
                 return $this->get_renderer()->render( $this->force_template );
             }
-            return $this->get_renderer()->render( 'inactive-license-template.php' );
+            return $this->get_renderer()->render(
+                'inactive-license-template.php',
+                array(
+                    'user_email' => $this->get_license_email(),
+                )
+            );
         }
         // By default, render settings page.
         return $this->get_renderer()->render(
             'settings-template.php',
             array(
-                'username'                      => $this->get_user_property( 'user_login' ),
                 'settings'                      => $this->get_custom_data_settings(),
                 'group'                         => $this->get_group(),
                 'settings_products_count_key'   => self::LC_S_PRODUCST_COUNTS_KEY,
@@ -147,7 +153,7 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
                 'settings_shipping_address_key' => self::LC_S_SHIPPING_ADDRESS_KEY,
                 'settings_total_value_key'      => self::LC_S_TOTAL_VALUE_KEY,
                 'settings_last_order_key'       => self::LC_S_LAST_ORDER_KEY,
-                'user_email'                    => $this->get_user_property('user_email'),
+                'user_email'                    => $this->get_license_email(),
             )
         );
     }
@@ -195,6 +201,7 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
     private function reset_settings() {
         delete_option( self::LC_GROUP_KEY );
         delete_option( self::LC_LICENSE_ID );
+        delete_option( self::LC_LICENSE_EMAIL );
         delete_option( self::LC_SETTINGS );
     }
 
@@ -211,6 +218,23 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
         }
 
         return false;
+    }
+
+    /**
+     * Set up license email
+     *
+     * @param string $license_email
+     */
+    private function set_up_license_email( $license_email ) {
+        update_option( self::LC_LICENSE_EMAIL, $license_email );
+    }
+
+    /**
+     * Returns user LiveChat license email.
+     * @return string
+     */
+    private function get_license_email() {
+        return get_option( self::LC_LICENSE_EMAIL, null );
     }
 
     /**

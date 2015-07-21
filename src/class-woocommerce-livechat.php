@@ -16,6 +16,7 @@ class WooCommerce_LiveChat implements WooCommerce_LiveChat_Interface
      */
     const LC_GROUP_KEY              = 'wc-lc_group';
     const LC_LICENSE_ID             = 'wc-lc_license';
+    const LC_LICENSE_EMAIL          = 'wc-lc_licenseEmail';
     const LC_SETTINGS               = 'wc-lc_customDataSettings';
     /**
      * Custom params settings keys.
@@ -163,7 +164,7 @@ class WooCommerce_LiveChat implements WooCommerce_LiveChat_Interface
             ) );
         }
 
-        return trim($res);
+        return trim( $res );
     }
 
     /**
@@ -178,7 +179,12 @@ class WooCommerce_LiveChat implements WooCommerce_LiveChat_Interface
                 $title = $product['data']->get_title();
 
                 $res[] = $this->get_renderer()->render(
-                    'product-data-template.php', array( 'url' => $url, 'title' => $title ), false
+                    'product-data-template.php',
+                    array(
+                        'url'   => $url,
+                        'title' => $title
+                    ),
+                    false
                 );
             }
         }

@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <span class="logo-woo"></span>
         <span class="logo"></span>
     </div>
-    <h2>Use existing LiveChat account</h2>
+    <h2>Use an existing LiveChat account</h2>
     <form action="#" id="useExistingAccountForm">
         <div>
             <label for="lc-login">LiveChat login</label><input class="textField" id="lc-login" value="" placeholder="<?php echo $useremail ?>"/>
@@ -41,8 +41,8 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </form>
     <div class="links">
-        By creating account you agree to
-        <a href="http://www.livechatinc.com/terms-and-conditions" target="_blank">Terms and conditions</a> and
+        By creating an account you agree to
+        <a href="http://www.livechatinc.com/terms-and-conditions" target="_blank">Terms &amp; Conditions</a> and
         <a href="http://www.livechatinc.com/privacy-policy" target="_blank">Privacy Policy</a>
     </div>
 </div>

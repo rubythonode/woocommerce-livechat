@@ -36,6 +36,7 @@
                         if (data.error) {
                             WooCommerceLiveChat.showError('lc-login', 'Incorrect LiveChat login.');
                         } else {
+                            WooCommerceLiveChat.setSettings('licenseEmail', login);
                             WooCommerceLiveChat.setSettings('licenseId', data.number, 1);
                         }
                         WooCommerceLiveChat.hideLoader(button, orginalButtonText);
@@ -59,6 +60,7 @@
                 data: data,
                 dataType: 'json',
                 cache: false,
+                async: false,
                 success: function (data, status, error) {
                     if (data == 'ok') {
                         if (reload == 1) {
@@ -113,6 +115,7 @@
                             if (data.error) {
                                 WooCommerceLiveChat.showError('password', data.error);
                             } else {
+                                WooCommerceLiveChat.setSettings('licenseEmail', $('#email').val());
                                 WooCommerceLiveChat.setSettings('licenseId', data.license, 1);
                             }
                             WooCommerceLiveChat.hideLoader(button, orginalButtonText);
@@ -134,9 +137,9 @@
         },
         settingsForm: function() {
             $('#resetAccount').click(function() {
-                return confirm('This will reset your LiveChat plugin settings. Continue?');
+                return confirm('This will reset your LiveChat plugin settings. Do you want to continue?');
             });
-            $('#settings .title').click(function() {
+            $('.settings .title').click(function() {
                 $(this).next('.onoffswitch').children('label').click();
             });
             $('.onoffswitch-checkbox').change(function() {

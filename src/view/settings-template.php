@@ -92,6 +92,6 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
     <div class="links">
-        Your LivChat account is: <?php echo $user_email ?>. <a href="?page=wc-livechat&amp;reset=1" id="resetAccount" class="a-important">Change account.</a>
+        Your LiveChat account is: <?php echo $user_email ?>. <a href="?page=wc-livechat&amp;reset=1" id="resetAccount" class="a-important">Change account.</a>
     </div>
 </div>

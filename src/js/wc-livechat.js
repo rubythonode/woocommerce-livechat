@@ -150,14 +150,6 @@
                     WooCommerceLiveChat.setSettings('customDataSettings', paramName + ':' + 0);
                 }
             });
-            $('#customDataGroup').change(function() {
-                $(this).removeClass('error');
-                if (jQuery.isNumeric($(this).val())) {
-                    WooCommerceLiveChat.setSettings('group', $(this).val());
-                } else {
-                    $(this).addClass('error');
-                }
-            });
         },
         validateNewLicenseForm: function () {
             if ($('#full-name').val().length < 1) {

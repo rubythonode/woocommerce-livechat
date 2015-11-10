@@ -203,9 +203,6 @@
 #woocommerce-livechat-container .hidden {
     display: none!important;
 }
-#woocommerce-livechat-container #customDataGroup {
-    width: 66px;
-}
 #woocommerce-livechat-container .settings {
     width: 281px;
     margin: 20px auto 20px auto;

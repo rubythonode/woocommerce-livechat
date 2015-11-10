@@ -14,7 +14,6 @@ class WooCommerce_LiveChat implements WooCommerce_LiveChat_Interface
     /**
      * Default settings params keys.
      */
-    const LC_GROUP_KEY              = 'wc-lc_group';
     const LC_LICENSE_ID             = 'wc-lc_license';
     const LC_LICENSE_EMAIL          = 'wc-lc_licenseEmail';
     const LC_SETTINGS               = 'wc-lc_customDataSettings';
@@ -64,7 +63,6 @@ class WooCommerce_LiveChat implements WooCommerce_LiveChat_Interface
                     'license_id'  => $licenseId,
                     'custom_data' => $custom_lc_data,
                     'ajax_url'    => admin_url() . 'admin-ajax.php',
-                    'group'       => $this->get_group(),
                 )
             );
         }
@@ -211,14 +209,6 @@ class WooCommerce_LiveChat implements WooCommerce_LiveChat_Interface
      */
     protected function get_license() {
         return get_option( self::LC_LICENSE_ID, null );
-    }
-
-    /**
-     * Returns user group.
-     * @return integer
-     */
-    protected function get_group() {
-        return get_option( self::LC_GROUP_KEY, 0 );
     }
 
     /**

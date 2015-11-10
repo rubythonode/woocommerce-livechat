@@ -91,19 +91,6 @@ if ( ! defined( 'ABSPATH' ) ) {
             </div>
         </div>
     </div>
-    <div class="installation-desc">
-        Choose the LiveChat group that should receive your chats. If you want all groups to receive chats, leave it as '0'. <a href="http://www.livechatinc.com/kb/dividing-live-chat-by-group/" target="_blank" class="a-important">Learn more about groups</a>.
-    </div>
-    <div class="settings">
-        <div>
-            <div class="title">
-                <span>Group</span>
-            </div>
-            <div class="onoffswitch">
-                <input type="text" pattern="[0-9]{,3}" id="customDataGroup" placeholder="0" value="<?php echo $group ?>"/>
-            </div>
-        </div>
-    </div>
     <div class="links">
         Your LivChat account is: <?php echo $user_email ?>. <a href="?page=wc-livechat&amp;reset=1" id="resetAccount" class="a-important">Change account.</a>
     </div>

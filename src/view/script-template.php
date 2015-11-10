@@ -17,7 +17,6 @@ __lc.params = [
             { name: '<?php echo $key ?>', value: '<?php echo $value ?>' },
     <?php endforeach ?>
 ];
-__lc.group = <?php echo $group ?>;
 (function() {
 var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
 lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';

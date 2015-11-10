@@ -26,10 +26,9 @@ Take a tour to see why you need LiveChat on your website: http://www.livechatinc
 
 == Changelog ==
 
-= 1.0 =
+= 1.1 =
 * Support for creating new accounts,
 * Support for using an existing account,
-* Support for using groups,
 * Custom data settings:
  * Current cart products details (name, url),
  * Current cart products count,

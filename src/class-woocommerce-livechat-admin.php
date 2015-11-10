@@ -79,13 +79,11 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
     }
 
     /**
-     * Update user settings (license id, group and custom params)
+     * Update user settings (license id  and custom params)
      */
     public function update_settings() {
         if ( 'POST' == $_SERVER['REQUEST_METHOD'] ) {
-            if ( array_key_exists( 'group', $_POST ) ) {
-                $updated = $this->update_group( (int) $_POST['group'] );
-            } else if ( array_key_exists( 'licenseId', $_POST ) ) {
+            if ( array_key_exists( 'licenseId', $_POST ) ) {
                 $updated = $this->set_up_license_id( (int) $_POST['licenseId'] );
             } else if ( array_key_exists( 'licenseEmail', $_POST ) ) {
                 $updated = $this->set_up_license_email( $_POST['licenseEmail'] );
@@ -147,7 +145,6 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
             'settings-template.php',
             array(
                 'settings'                      => $this->get_custom_data_settings(),
-                'group'                         => $this->get_group(),
                 'settings_products_count_key'   => self::LC_S_PRODUCST_COUNTS_KEY,
                 'settings_products_key'         => self::LC_S_PRODUCTS_KEY,
                 'settings_shipping_address_key' => self::LC_S_SHIPPING_ADDRESS_KEY,
@@ -196,28 +193,12 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
     }
 
     /**
-     * Reset user license id and group.
+     * Reset user license id.
      */
     private function reset_settings() {
-        delete_option( self::LC_GROUP_KEY );
         delete_option( self::LC_LICENSE_ID );
         delete_option( self::LC_LICENSE_EMAIL );
         delete_option( self::LC_SETTINGS );
-    }
-
-    /**
-     * Update user group.
-     *
-     * @param integer $group_id
-     * @return boolean
-     */
-    private function update_group( $group_id ) {
-        // valid group
-        if ( is_int( $group_id ) && $group_id >= 0) {
-            return update_option( self::LC_GROUP_KEY, $group_id );
-        }
-
-        return false;
     }
 
     /**

@@ -11,18 +11,19 @@ Live chat software for WooCommerce plugin that integrate with LiveChat - an appl
 
 == Description ==
 
-LiveChat is a fast and intuitive live chat software to let your website visitors contact you in real-time. Help online visitors find what they need before they leave your site.
+LiveChat is a fast and intuitive live chat software which lets your website visitors contact you in real-time. Help your clients find what they need before they leave your site.
 
-Try LiveChat free for 30 days! Sign up here: https://www.livechatinc.com/signup/
+Try LiveChat for free for 30 days! Sign up here: https://www.livechatinc.com/signup/
 
 Take a tour to see why you need LiveChat on your website: http://www.livechatinc.com/why-livechat/
 
 == Installation ==
 
-1. Upload `livechat-woocommerce` directory to Wordpress plugins directory (by default `/wp-content/plugins/`)
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Click the 'WooCommerce -> LiveChat' menu on the left.
-4. Follow the instructions.
+1. Upload `livechat-woocommerce` directory to Wordpress plugins directory (by default `/wp-content/plugins/`).
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Click 'WooCommerce' in the menu on the left and select 'LiveChat'.
+4. If you have a LiveChat account already, provide your login email in the upper part of the installation page.
+5. If you don't have an account yet, provide your name, email and password to set up one.
 
 == Changelog ==
 
@@ -32,6 +33,6 @@ Take a tour to see why you need LiveChat on your website: http://www.livechatinc
 * Custom data settings:
  * Current cart products details (name, url),
  * Current cart products count,
- * Cuttenr cart total value,
+ * Current cart total value,
  * Shipping address,
  * Last order info (url to last order),

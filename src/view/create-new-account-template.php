@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <button class="button"><span>Use existing account</span></button>
         </div>
     </form>
-    <h2><strong>or</strong> create new LiveChat account</h2>
+    <h2><strong>or</strong> create a new LiveChat account</h2>
     <form action="#" id="createNewAccountForm">
         <div>
             <label for="full-name">Full name</label><input class="textField" id="full-name" value="<?php echo $username ?>" placeholder="<?php echo $username ?>"/>

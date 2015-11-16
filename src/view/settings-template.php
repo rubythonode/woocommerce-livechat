@@ -13,9 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
         <span class="logo-woo"></span>
         <span class="logo"></span>
     </div>
-    <h2>LiveChat is installed properly</h2>
+    <h2>LiveChat installed successfully!</h2>
     <div class="installation-desc">
-        Sign in to LiveChat and start chatting with your customers!
+        Sign in to LiveChat and start chatting with your customers.
     </div>
     <p class="lc-submit multi-buttons">
         <a href="https://my.livechatinc.com/" target="_blank">
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     </p>
     <h2>Integration settings</h2>
     <div class="installation-desc">
-        Select which customer data should be displayed in LiveChat using <a class="a-important" href="http://www.livechatinc.com/kb/custom-variables-configuration/" target="_blank">Custom Parameters</a>.
+        The below information about customers will be available during chat. You can manage which details to display.
     </div>
     <div class="settings">
         <div>
@@ -92,6 +92,6 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
     <div class="links">
-        Your LiveChat account is: <?php echo $user_email ?>. <a href="?page=wc-livechat&amp;reset=1" id="resetAccount" class="a-important">Change account.</a>
+        Your LiveChat account is: <?php echo $user_email ?>. <a href="?page=wc-livechat&amp;reset=1" id="resetAccount" class="a-important">Connect a different LiveChat account.</a>
     </div>
 </div>

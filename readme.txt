@@ -27,6 +27,9 @@ Take a tour to see why you need LiveChat on your website: http://www.livechatinc
 
 == Changelog ==
 
+= 1.1.1 =
+ * Fix undefined index notices,
+
 = 1.1.0 =
 * Support for creating new accounts,
 * Support for using an existing account,

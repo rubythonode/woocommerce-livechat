@@ -52,7 +52,7 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
         add_action( 'wp_ajax_wc-livechat-update-settings', array( $this, 'update_settings' ) );
         add_action( 'wp_ajax_wc-livechat-check-cart', array( $this, 'check_cart' ) );
 
-        if ( 'wc-livechat' == $_GET['page'] ) {
+        if ( array_key_exists('page', $_GET) && 'wc-livechat' == $_GET['page'] ) {
             add_action( 'admin_head', array( $this, 'admin_head_block' ) );
         }
     }
@@ -269,7 +269,14 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
         }
 
         $plugin_dir = get_plugins( '/' . plugin_basename( dirname( __FILE__ ) . '/..' ) );
-        $this->plugin_version = $plugin_dir['livechat.php']['Version'];
+
+        if (
+            array_key_exists('livechat.php', $plugin_dir) &&
+            is_array($plugin_dir['livechat.php']) &&
+            array_key_exists('Version', $plugin_dir['livechat.php'])
+        ) {
+            $this->plugin_version = $plugin_dir['livechat.php']['Version'];
+        }
     }
 
     /**

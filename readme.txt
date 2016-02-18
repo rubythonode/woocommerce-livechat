@@ -78,12 +78,6 @@ __Which languages does LiveChat support?__
 
 LiveChat is available in 41 languages including: Chinese, English, French, German, Indonesian, Portuguese and Spanish. The list of available languages can be found [here](https://www.livechatinc.com/kb/how-to-modify-chat-window-language/?a=woocommerce&utm_source=woocommerceplugin&utm_medium=integration&utm_campaign=woocommerceplugin "LiveChat Knowledge Base, Support").
 
-== Upgrade Notice ==
-
-= 1.1.1 =
-
-Small improvements.
-
 == Screenshots ==
 
 1. LiveChat applications are available for web browser, Windows Mac and iPhone, iPad and Android devices.
@@ -95,7 +89,21 @@ Small improvements.
 7. Additional information from pre-chat and post-chat surveys serves as extra knowledge about customers.
 8. Help desk software in LiveChat allows collecting tickets from chats, emails and ticket forms.
 
+== Upgrade Notice ==
+
+= 1.1.2 =
+
+Adjust code to WordPress requirements
+
+= 1.1.1 =
+
+Small improvements.
+
 == Changelog ==
+
+= 1.1.2 =
+ * Remove hardcoded WP_PLUGIN_URL,
+ * Use wp_enqueue,
 
 = 1.1.1 =
  * Fix undefined index notices,

@@ -15,10 +15,15 @@ if ( ! defined( 'ABSPATH' ) ) {
     <h1>Something went wrong...</h1>
     <div class="installation-desc">
         <p class="intro">
-            Please <a class="a-important" href="#" onClick="window.location.reload()">reload this page</a> or contact our support team.
+            Please <a class="a-important" href="#" onClick="window.location.reload()">reload this page</a> or <a href="https://secure.livechatinc.com/licence/1520/open_chat.cgi?groups=77&email=<?php echo urlencode($user_email) ?>&name=<?php echo urlencode($username) ?>&params=integration%3DWooCommerce" class="a-important" target="_blank">contact our support team</a>.
         </p>
     </div>
+    <div class="links">
+        If you have any questions, we're
+            <a href="https://secure.livechatinc.com/licence/1520/open_chat.cgi?groups=77&email=<?php echo urlencode($user_email) ?>&name=<?php echo urlencode($username) ?>&params=integration%3DWooCommerce" class="a-important" target="_blank">
+                available to chat
+            </a>
+        24/7/365.
+    </div>
 </div>
-<script type="text/javascript">
-    setTimeout(function() { window.location.reload() }, 5000);
-</script>
+

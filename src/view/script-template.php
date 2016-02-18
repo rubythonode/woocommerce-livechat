@@ -8,8 +8,9 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
+header( "Content-type: text/javascript; charset: UTF-8" );
+
 ?>
-<script type="text/javascript">
 var __lc = {};
 __lc.license = <?php echo $license_id ?>;
 __lc.params = [
@@ -55,5 +56,3 @@ function checkCart() {
 }
 
 setInterval(function() { checkCart(); }, 10000);
-
-</script>

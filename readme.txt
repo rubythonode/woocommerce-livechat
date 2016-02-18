@@ -27,6 +27,10 @@ Take a tour to see why you need LiveChat on your website: http://www.livechatinc
 
 == Changelog ==
 
+= 1.1.2 =
+ * Remove hardcoded WP_PLUGIN_URL,
+ * Use wp_enqueue,
+
 = 1.1.1 =
  * Fix undefined index notices,
 

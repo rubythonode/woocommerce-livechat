@@ -92,6 +92,13 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
     <div class="links">
-        Your LiveChat account is: <?php echo $user_email ?>. <a href="?page=wc-livechat&amp;reset=1" id="resetAccount" class="a-important">Connect a different LiveChat account.</a>
+        Your LiveChat account is: <?php echo $license_email ?>. <a href="?page=wc-livechat&amp;reset=1" id="resetAccount" class="a-important">Connect a different LiveChat account.</a>
+    </div>
+    <div class="links">
+        If you have any questions, we're
+            <a href="https://secure.livechatinc.com/licence/1520/open_chat.cgi?groups=77&email=<?php echo urlencode($user_email) ?>&name=<?php echo urlencode($username) ?>&params=integration%3DWooCommerce" class="a-important" target="_blank">
+                available to chat
+            </a>
+        24/7/365.
     </div>
 </div>

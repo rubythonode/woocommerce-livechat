@@ -37,7 +37,8 @@ class WooCommerce_LiveChat implements WooCommerce_LiveChat_Interface
      * Set up base action.
      */
     public function init() {
-        add_action( 'wp_head', array( $this, 'render_script' ) );
+//        add_action( 'wp_head', array( $this, 'render_script' ) );
+        wp_enqueue_script( 'wc-livechat-script', admin_url() . 'admin-ajax.php?action=wc-livechat-script&t=' . time() );
     }
 
     /**
@@ -46,6 +47,7 @@ class WooCommerce_LiveChat implements WooCommerce_LiveChat_Interface
     public function init_public_ajax() {
         add_action( 'wp_ajax_nopriv_wc-livechat-check-cart', array( $this, 'check_cart' ) );
         add_action( 'woocommerce_checkout_order_processed', array( $this, 'set_last_order_id' ), 10, 1 );
+        add_action( 'wp_ajax_nopriv_wc-livechat-script', array( $this, 'render_script' ) );
     }
 
     /**
@@ -66,6 +68,8 @@ class WooCommerce_LiveChat implements WooCommerce_LiveChat_Interface
                 )
             );
         }
+
+        wp_die();
     }
 
     /**

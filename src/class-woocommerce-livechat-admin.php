@@ -24,10 +24,6 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
      */
     private $user_info;
     /**
-     * @var string plugin url
-     */
-    private $plugin_url;
-    /**
      * @var string plugin version
      */
     private $plugin_version;
@@ -40,7 +36,6 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
      * Set up base plugin info.
      */
     public function __construct() {
-        $this->set_up_plugin_url();
         $this->set_up_plugin_version();
     }
 
@@ -51,24 +46,35 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
         add_action( 'admin_menu', array( $this, 'admin_menu' ) );
         add_action( 'wp_ajax_wc-livechat-update-settings', array( $this, 'update_settings' ) );
         add_action( 'wp_ajax_wc-livechat-check-cart', array( $this, 'check_cart' ) );
+        add_action( 'wp_ajax_wc-livechat-js-urls', array( $this, 'js_urls' ) );
+        add_action( 'wp_ajax_wc-livechat-script', array( $this, 'render_script' ) );
 
         if ( array_key_exists('page', $_GET) && 'wc-livechat' == $_GET['page'] ) {
             add_action( 'admin_head', array( $this, 'admin_head_block' ) );
         }
     }
 
+    public function js_urls() {
+        $this->get_renderer()->render(
+            'admin-head-block-template.php',
+            array(
+                'check_license_url' => self::LC_CHECK_LICENSE,
+                'set_settings_url'  => admin_url() . 'admin-ajax.php',
+                'new_license_url'   => self::LC_NEW_LICENSE,
+            )
+        );
+
+        wp_die();
+    }
+
     /**
      * Render admin head block.
      */
     public function admin_head_block() {
-        $this->get_renderer()->render( 'admin-head-block-template.php', array(
-            'username'          => $this->get_user_property('user_login'),
-            'user_email'        => $this->get_user_property('user_email'),
-            'check_license_url' => self::LC_CHECK_LICENSE,
-            'set_settings_url'  => admin_url() . 'admin-ajax.php',
-            'new_license_url'   => self::LC_NEW_LICENSE,
-        ));
-        wp_enqueue_script( 'wc-livechat', $this->plugin_url . '/js/wc-livechat.js', 'jquery', $this->plugin_version, true );
+        wp_enqueue_script( 'wc-livechat-data', admin_url() . 'admin-ajax.php?action=wc-livechat-js-urls&t=' . time() );
+        wp_enqueue_script( 'wc-livechat', plugins_url('js/wc-livechat.js', __FILE__), array('jquery', 'wc-livechat-data'), $this->plugin_version, true );
+        wp_enqueue_style( 'wc-livechat-style', plugins_url('css/style.css', __FILE__), array(), $this->plugin_version );
+        wp_enqueue_style( 'wc-livechat-fonts', '//fonts.googleapis.com/css?family=Lato:300' );
     }
 
     /**
@@ -117,13 +123,16 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
             wp_die();
         }
 
+        $user_email = $this->get_user_property( 'user_email' );
+        $username = $this->get_user_property( 'user_login' );
+
         if ( null === ( $license_id = $this->get_license() ) ) {
             // If there is no give license, render plugin login/register page.
             return $this->get_renderer()->render(
                 'create-new-account-template.php',
                 array(
-                    'username'  => $this->get_user_property( 'user_login' ),
-                    'useremail' => $this->get_user_property( 'user_email' ),
+                    'username'  => $username,
+                    'user_email' => $user_email,
                 )
             );
         }
@@ -131,12 +140,20 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
         if ( false === $this->is_license_active( $license_id ) ) {
             // If license is not active, render inactive license page.
             if ( null !== $this->force_template ) {
-                return $this->get_renderer()->render( $this->force_template );
+                return $this->get_renderer()->render(
+                    $this->force_template,
+                    array(
+                        'username'  => $username,
+                        'user_email' => $user_email,
+                    )
+                );
             }
             return $this->get_renderer()->render(
                 'inactive-license-template.php',
                 array(
-                    'user_email' => $this->get_license_email(),
+                    'license_email' => $this->get_license_email(),
+                    'username'  => $username,
+                    'user_email' => $user_email,
                 )
             );
         }
@@ -150,7 +167,9 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
                 'settings_shipping_address_key' => self::LC_S_SHIPPING_ADDRESS_KEY,
                 'settings_total_value_key'      => self::LC_S_TOTAL_VALUE_KEY,
                 'settings_last_order_key'       => self::LC_S_LAST_ORDER_KEY,
-                'user_email'                    => $this->get_license_email(),
+                'license_email'                 => $this->get_license_email(),
+                'username'                      => $username,
+                'user_email'                    => $user_email,
             )
         );
     }
@@ -277,12 +296,5 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
         ) {
             $this->plugin_version = $plugin_dir['livechat.php']['Version'];
         }
-    }
-
-    /**
-     * Set up plugin url.
-     */
-    private function set_up_plugin_url() {
-        $this->plugin_url = WP_PLUGIN_URL . '/woocommerce-livechat/src';
     }
 }

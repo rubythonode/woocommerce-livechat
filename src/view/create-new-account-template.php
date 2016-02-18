@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <h2>Use an existing LiveChat account</h2>
     <form action="#" id="useExistingAccountForm">
         <div>
-            <label for="lc-login">LiveChat login</label><input class="textField" id="lc-login" value="" placeholder="<?php echo $useremail ?>"/>
+            <label for="lc-login">LiveChat login</label><input class="textField" id="lc-login" value="" placeholder="<?php echo $user_email ?>"/>
             <span id="lc-login-error" class="error hidden"></span>
         </div>
         <div class="lc-submit">
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <span id="full-name-error" class="error hidden"></span>
         </div>
         <div>
-            <label for="email">Email</label><input class="textField" id="email" value="<?php echo $useremail ?>" placeholder="<?php echo $useremail ?>"/>
+            <label for="email">Email</label><input class="textField" id="email" value="<?php echo $user_email ?>" placeholder="<?php echo $user_email ?>"/>
             <span id="email-error" class="error hidden"></span>
         </div>
         <div>
@@ -40,6 +40,13 @@ if ( ! defined( 'ABSPATH' ) ) {
             <button class="button green"><span>Create new account</span></button>
         </div>
     </form>
+    <div class="links">
+        If you have any questions, we're
+            <a href="https://secure.livechatinc.com/licence/1520/open_chat.cgi?groups=77&email=<?php echo urlencode($user_email) ?>&name=<?php echo urlencode($username) ?>&params=integration%3DWooCommerce" class="a-important" target="_blank">
+                available to chat
+            </a>
+        24/7/365.
+    </div>
     <div class="links">
         By creating an account you agree to
         <a href="http://www.livechatinc.com/terms-and-conditions" target="_blank">Terms &amp; Conditions</a> and

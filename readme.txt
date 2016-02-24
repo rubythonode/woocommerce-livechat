@@ -1,6 +1,6 @@
 === LiveChat - Premium live chat software for Woocommerce ===
 
-Contributors: LiveChat
+Contributors: livechat
 Tags: customer engagement, customer service, ecommerce, help desk, live chat, online sales, ticketing system, woocommerce
 
 Stable tag: 3.2.13
@@ -27,7 +27,8 @@ __Reports and analytics__ - measure sales success and how receptive customers ar
 __Mobile applications__ - stay connected with customers on the go using LiveChat’s mobile application for iPhone, iPad and Android.  
  
 Some online retailers already use LiveChat. Here's what they think of our product:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XfBOacgArjE" frameborder="0" allowfullscreen></iframe>
+
+https://www.youtube.com/embed/XfBOacgArjE
 
 __Try LiveChat free for 30 days!__ Sign up for our live chat here: [LiveChat Signup](https://www.livechatinc.com/signup/?a=woocommerce&utm_source=woocommerceplugin&utm_medium=integration&utm_campaign=woocommerceplugin "Sign up for LiveChat for free").
 

@@ -37,7 +37,6 @@ class WooCommerce_LiveChat implements WooCommerce_LiveChat_Interface
      * Set up base action.
      */
     public function init() {
-//        add_action( 'wp_head', array( $this, 'render_script' ) );
         wp_enqueue_script( 'wc-livechat-script', admin_url() . 'admin-ajax.php?action=wc-livechat-script&t=' . time() );
     }
 
@@ -64,7 +63,8 @@ class WooCommerce_LiveChat implements WooCommerce_LiveChat_Interface
                 array(
                     'license_id'  => $licenseId,
                     'custom_data' => $custom_lc_data,
-                    'ajax_url'    => admin_url() . 'admin-ajax.php',
+                    'ajax_url'    => str_replace(array('https://', 'http://'), '//' , admin_url()) . 'admin-ajax.php',
+                    'user'        => get_currentuserinfo()
                 )
             );
         }

@@ -30,7 +30,11 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
     /**
      * @var string force template name (for rendering errors)
      */
-    private $force_template;
+    private $custom_template;
+    /**
+     * @var array of parameters for custom template
+     */
+    private $custom_template_params = array();
 
     /**
      * Set up base plugin info.
@@ -139,12 +143,15 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
 
         if ( false === $this->is_license_active( $license_id ) ) {
             // If license is not active, render inactive license page.
-            if ( null !== $this->force_template ) {
+            if ( null !== $this->custom_template ) {
                 return $this->get_renderer()->render(
-                    $this->force_template,
-                    array(
-                        'username'  => $username,
-                        'user_email' => $user_email,
+                    $this->custom_template,
+                    array_merge(
+                        array(
+                            'username'  => $username,
+                            'user_email' => $user_email,
+                        ),
+                        $this->custom_template_params
                     )
                 );
             }
@@ -197,16 +204,31 @@ class WooCommerce_LiveChat_Admin extends WooCommerce_LiveChat implements WooComm
         $res = wp_remote_get( str_replace( '%licenseId%', $license_id, self::LC_ACOUNT_DETAILS_URL_PATTERN ), array( 'timeout' => 30 ) );
 
         if ( $res instanceof WP_Error ) {
-            $this->force_template = 'connection-error-template.php';
+            $this->custom_template = 'connection-error-template.php';
+
+            $this->custom_template_params = array(
+                'code'    => $res->get_error_code(),
+                'message' => $res->get_error_message()
+            );
 
             return false;
         }
 
-        $body = json_decode( $res['body'], true );
+        if ( 200 === $res['response']['code'] ) {
+            $body = json_decode( $res['body'], true );
 
-        if ( array_key_exists( 'license_active', $body ) && true === $body['license_active'] ) {
-            return true;
+            if ( is_array( $body ) && array_key_exists( 'license_active', $body ) && true === $body['license_active'] ) {
+                return true;
+            }
+        } else {
+            $this->custom_template = 'api-error-template.php';
+
+            $this->custom_template_params = array(
+                'code'    => $res['response']['code'],
+                'message' => $res['response']['message']
+            );
         }
+
 
         return false;
     }

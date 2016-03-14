@@ -3,7 +3,7 @@
  * Plugin Name: LiveChat WooCommerce
  * Plugin URI: http://www.livechatinc.com/integrations/cms/woocommerce
  * Description: Live chat software for live help, online sales and customer support. This plugin allows to quickly install LiveChat on any WooCommerce website.
- * Version: 1.1.2
+ * Version: 1.1.5
  * Author: LiveChat
  * Author URI: http://www.livechatinc.com
  * Text Domain: woocommerce-livechat

@@ -27,6 +27,10 @@ Take a tour to see why you need LiveChat on your website: http://www.livechatinc
 
 == Changelog ==
 
+= 1.1.3 =
+
+Added visitor details (email and username)
+
 = 1.1.2 =
  * Remove hardcoded WP_PLUGIN_URL,
  * Use wp_enqueue,

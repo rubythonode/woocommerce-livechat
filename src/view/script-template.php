@@ -13,6 +13,10 @@ header( "Content-type: text/javascript; charset: UTF-8" );
 ?>
 var __lc = {};
 __lc.license = <?php echo $license_id ?>;
+__lc.visitor = {
+    name: "<?php echo $visitor_name ?>",
+    email: "<?php echo $visitor_email ?>"
+};
 __lc.params = [
     <?php foreach ($custom_data as $key => $value): ?>
             { name: '<?php echo $key ?>', value: '<?php echo $value ?>' },

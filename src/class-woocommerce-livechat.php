@@ -56,15 +56,26 @@ class WooCommerce_LiveChat implements WooCommerce_LiveChat_Interface
      * @return string
      */
     public function render_script() {
+        $currentUserData = wp_get_current_user()->data;
+
+        if (property_exists($currentUserData, 'user_email')) {
+            $visitor_email = $currentUserData->user_email;
+        }
+        if (property_exists($currentUserData, 'display_name')) {
+            $visitor_name = $currentUserData->display_name;
+        }
+
         $custom_lc_data = $this->get_custom_livechat_data();
 
         if ( null !== ($licenseId = $this->get_license() ) ) {
             return $this->get_renderer()->render(
                 'script-template.php',
                 array(
-                    'license_id'  => $licenseId,
-                    'custom_data' => $custom_lc_data,
-                    'ajax_url'    => admin_url() . 'admin-ajax.php',
+                    'license_id'    => $licenseId,
+                    'custom_data'   => $custom_lc_data,
+                    'ajax_url'      => admin_url() . 'admin-ajax.php',
+                    'visitor_email' => $visitor_email,
+                    'visitor_name'  => $visitor_name
                 )
             );
         }

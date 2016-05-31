@@ -58,6 +58,9 @@ class WooCommerce_LiveChat implements WooCommerce_LiveChat_Interface
     public function render_script() {
         $currentUserData = wp_get_current_user()->data;
 
+        $visitor_email = null;
+        $visitor_name = null;
+
         if (property_exists($currentUserData, 'user_email')) {
             $visitor_email = $currentUserData->user_email;
         }

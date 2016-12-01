@@ -61,12 +61,15 @@ class WooCommerce_LiveChat implements WooCommerce_LiveChat_Interface
         $visitor_email = null;
         $visitor_name = null;
 
-        if (property_exists($currentUserData, 'user_email')) {
-            $visitor_email = $currentUserData->user_email;
-        }
-        if (property_exists($currentUserData, 'display_name')) {
-            $visitor_name = $currentUserData->display_name;
-        }
+		if(is_object($currentUserData))
+		{
+			if (property_exists($currentUserData, 'user_email')) {
+				$visitor_email = $currentUserData->user_email;
+			}
+			if (property_exists($currentUserData, 'display_name')) {
+				$visitor_name = $currentUserData->display_name;
+			}
+		}
 
         $custom_lc_data = $this->get_custom_livechat_data();
 
